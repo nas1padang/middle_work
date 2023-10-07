@@ -11,8 +11,7 @@ require('dotenv').config()
 
 // import koneksi
 const pool = require('./helper/connect')
-const authorizationChecker = require('./helper/verifyToken')
-const swaggerDocs = require('./helper/swagger')
+const swaggerDocs = require('./documentation/documentation.json')
 
 // test koneksi
 pool.connect((err,res) => {
@@ -40,7 +39,7 @@ const user = require('./routes/user')
 const movies = require('./routes/movies')
 
 app.use('/login', user);
-app.use('/movies', authorizationChecker, movies);
+app.use('/movies', movies);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`)

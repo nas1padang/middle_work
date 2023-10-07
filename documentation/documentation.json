@@ -1,0 +1,412 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Movies API",
+    "description": "API Untuk Akses data-data Film",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:1999",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/movies/100": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Get Movies By Id",
+        "operationId": "GetMoviesById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "patch": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Update Movies Patch",
+        "operationId": "UpdateMoviesPatch",
+        "parameters": [
+          {
+            "name": "X-Token-Key",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjo1LCJlbWFpbCI6InN0aGlyc3Q0QGJsb2cuY29tIiwiZ2VuZGVyIjoiTWFsZSIsInBhc3N3b3JkIjoiclJic2pKR0ZNcTU3Iiwicm9sZSI6IkNvbnN0cnVjdGlvbiBGb3JlbWFuIn0sImlhdCI6MTY5NjY2OTQzNiwiZXhwIjoxNjk2NjczMDM2fQ.-BOKx4DolTm4fMu4hq5QbD-ZbpI39w290s1oP7ZV4Aw"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateMoviesPatchRequest"
+                  },
+                  {
+                    "example": {
+                      "title": "Si Boy Anak Jalanan"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "title": "Si Boy Anak Jalanan"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Delete Movies",
+        "operationId": "DeleteMovies",
+        "parameters": [
+          {
+            "name": "X-Token-Key",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjo1LCJlbWFpbCI6InN0aGlyc3Q0QGJsb2cuY29tIiwiZ2VuZGVyIjoiTWFsZSIsInBhc3N3b3JkIjoiclJic2pKR0ZNcTU3Iiwicm9sZSI6IkNvbnN0cnVjdGlvbiBGb3JlbWFuIn0sImlhdCI6MTY5NjY2OTQzNiwiZXhwIjoxNjk2NjczMDM2fQ.-BOKx4DolTm4fMu4hq5QbD-ZbpI39w290s1oP7ZV4Aw"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Update Movie Keseluruhan",
+        "operationId": "UpdateMovieKeseluruhan",
+        "parameters": [
+          {
+            "name": "X-Token-Key",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjo1LCJlbWFpbCI6InN0aGlyc3Q0QGJsb2cuY29tIiwiZ2VuZGVyIjoiTWFsZSIsInBhc3N3b3JkIjoiclJic2pKR0ZNcTU3Iiwicm9sZSI6IkNvbnN0cnVjdGlvbiBGb3JlbWFuIn0sImlhdCI6MTY5NjY2OTQzNiwiZXhwIjoxNjk2NjczMDM2fQ.-BOKx4DolTm4fMu4hq5QbD-ZbpI39w290s1oP7ZV4Aw"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateMovieKeseluruhanRequest"
+                  },
+                  {
+                    "example": {
+                      "year": 1997,
+                      "genres": "Comedy",
+                      "title": "Aliyuddin Anak Jalanan"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "year": 1997,
+                "genres": "Comedy",
+                "title": "Aliyuddin Anak Jalanan"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Get Movies by Page",
+        "operationId": "GetMoviesbyPage",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Create Movies",
+        "operationId": "CreateMovies",
+        "parameters": [
+          {
+            "name": "X-Token-Key",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjo1LCJlbWFpbCI6InN0aGlyc3Q0QGJsb2cuY29tIiwiZ2VuZGVyIjoiTWFsZSIsInBhc3N3b3JkIjoiclJic2pKR0ZNcTU3Iiwicm9sZSI6IkNvbnN0cnVjdGlvbiBGb3JlbWFuIn0sImlhdCI6MTY5NjY2OTQzNiwiZXhwIjoxNjk2NjczMDM2fQ.-BOKx4DolTm4fMu4hq5QbD-ZbpI39w290s1oP7ZV4Aw"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateMoviesRequest"
+                  },
+                  {
+                    "example": {
+                      "year": 2023,
+                      "genres": "Comedy",
+                      "title": "Si Boy Anak Jalanan"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "year": 2023,
+                "genres": "Comedy",
+                "title": "Si Boy Anak Jalanan"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Login",
+        "operationId": "Login",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/LoginRequest"
+                  },
+                  {
+                    "example": {
+                      "email": "sthirst4@blog.com",
+                      "password": "rRbsjJGFMq57"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "email": "sthirst4@blog.com",
+                "password": "rRbsjJGFMq57"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LoginRequest": {
+        "title": "LoginRequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "sthirst4@blog.com",
+          "password": "rRbsjJGFMq57"
+        }
+      },
+      "CreateMoviesRequest": {
+        "title": "CreateMoviesRequest",
+        "required": [
+          "year",
+          "genres",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "genres": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "year": 2023,
+          "genres": "Comedy",
+          "title": "Si Boy Anak Jalanan"
+        }
+      },
+      "UpdateMoviesPatchRequest": {
+        "title": "UpdateMoviesPatchRequest",
+        "required": [
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "title": "Si Boy Anak Jalanan"
+        }
+      },
+      "DeleteMoviesRequest": {
+        "title": "DeleteMoviesRequest",
+        "required": [
+          "year",
+          "genres",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "genres": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "year": 1997,
+          "genres": "Comedy",
+          "title": "Ali Topan Anak Jalanan"
+        }
+      },
+      "UpdateMovieKeseluruhanRequest": {
+        "title": "UpdateMovieKeseluruhanRequest",
+        "required": [
+          "year",
+          "genres",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "genres": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "year": 1997,
+          "genres": "Comedy",
+          "title": "Aliyuddin Anak Jalanan"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}

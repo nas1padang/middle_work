@@ -1,0 +1,202 @@
+{
+    "info": {
+        "_postman_id": "256cbba5-010e-41a8-9a88-e63160cf0fa2",
+        "name": "Learn Express",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Get Movies By Id",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:1999/movies/101",
+                    "path": [
+                        "movies",
+                        "101"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "1999"
+                }
+            }
+        },
+        {
+            "name": "Get Movies by Page",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:1999/movies",
+                    "path": [
+                        "movies"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "1999"
+                }
+            }
+        },
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:1999/login",
+                    "path": [
+                        "login"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "1999"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\r\n  \"email\" : \"sthirst4@blog.com\",\r\n  \"password\" : \"rRbsjJGFMq57\"\r\n}"
+                }
+            }
+        },
+        {
+            "name": "Create Movies",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:1999/movies",
+                    "path": [
+                        "movies"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "1999"
+                },
+                "header": [
+                    {
+                        "key": "X-Token-Key",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjo1LCJlbWFpbCI6InN0aGlyc3Q0QGJsb2cuY29tIiwiZ2VuZGVyIjoiTWFsZSIsInBhc3N3b3JkIjoiclJic2pKR0ZNcTU3Iiwicm9sZSI6IkNvbnN0cnVjdGlvbiBGb3JlbWFuIn0sImlhdCI6MTY5NjY2OTQzNiwiZXhwIjoxNjk2NjczMDM2fQ.-BOKx4DolTm4fMu4hq5QbD-ZbpI39w290s1oP7ZV4Aw"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"year\" : 2023,\n  \"genres\" : \"Comedy\",\n  \"title\" : \"Si Boy Anak Jalanan\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Update Movies Patch",
+            "request": {
+                "method": "PATCH",
+                "url": {
+                    "raw": "http://localhost:1999/movies/101",
+                    "path": [
+                        "movies",
+                        "101"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "1999"
+                },
+                "header": [
+                    {
+                        "key": "X-Token-Key",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjo1LCJlbWFpbCI6InN0aGlyc3Q0QGJsb2cuY29tIiwiZ2VuZGVyIjoiTWFsZSIsInBhc3N3b3JkIjoiclJic2pKR0ZNcTU3Iiwicm9sZSI6IkNvbnN0cnVjdGlvbiBGb3JlbWFuIn0sImlhdCI6MTY5NjY2OTQzNiwiZXhwIjoxNjk2NjczMDM2fQ.-BOKx4DolTm4fMu4hq5QbD-ZbpI39w290s1oP7ZV4Aw"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"title\" : \"Si Boy Anak Jalanan\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Delete Movies",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:1999/movies/101",
+                    "path": [
+                        "movies",
+                        "101"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "1999"
+                },
+                "header": [
+                    {
+                        "key": "X-Token-Key",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjo1LCJlbWFpbCI6InN0aGlyc3Q0QGJsb2cuY29tIiwiZ2VuZGVyIjoiTWFsZSIsInBhc3N3b3JkIjoiclJic2pKR0ZNcTU3Iiwicm9sZSI6IkNvbnN0cnVjdGlvbiBGb3JlbWFuIn0sImlhdCI6MTY5NjY2OTQzNiwiZXhwIjoxNjk2NjczMDM2fQ.-BOKx4DolTm4fMu4hq5QbD-ZbpI39w290s1oP7ZV4Aw"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"year\" : 1997,\n  \"genres\" : \"Comedy\",\n  \"title\" : \"Ali Topan Anak Jalanan\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Update Movie Keseluruhan",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:1999/movies/101",
+                    "path": [
+                        "movies",
+                        "101"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "1999"
+                },
+                "header": [
+                    {
+                        "key": "X-Token-Key",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjo1LCJlbWFpbCI6InN0aGlyc3Q0QGJsb2cuY29tIiwiZ2VuZGVyIjoiTWFsZSIsInBhc3N3b3JkIjoiclJic2pKR0ZNcTU3Iiwicm9sZSI6IkNvbnN0cnVjdGlvbiBGb3JlbWFuIn0sImlhdCI6MTY5NjY2OTQzNiwiZXhwIjoxNjk2NjczMDM2fQ.-BOKx4DolTm4fMu4hq5QbD-ZbpI39w290s1oP7ZV4Aw"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"year\" : 1997,\n  \"genres\" : \"Comedy\",\n  \"title\" : \"Aliyuddin Anak Jalanan\"\n}"
+                }
+            }
+        }
+    ]
+}

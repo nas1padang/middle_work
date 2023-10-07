@@ -2,7 +2,11 @@
 ## Movie API
 API sederhana yang dibuat untuk mengelola data-data film
 
-```
+Diasumsikan bahwa user yang didalam tabel user adalah admin.
+untuk table dapat di di link berikut 👉 [Here](https://github.com/fathy17/dokumen-pembanding-2/raw/master/movies-database.sql)
+
+
+hw_middleware
 ├── helper              # koneksi dan autentikasi
 │   ├── connect.js
 │   ├── auth.js
@@ -13,7 +17,6 @@ API sederhana yang dibuat untuk mengelola data-data film
 │   ├── movie.js
 │   ├── user.js
 └── index.js
-```
 
 
 ### Cara Menjalankan Program

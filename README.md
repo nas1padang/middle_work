@@ -28,3 +28,20 @@ npm run start
 
 > Dapat dilihat pada router api-docs atau dapat dilihat di collection di repo ini
 
+#### Konfigurasi Environment
+
+```
+# DB CONFIG
+
+DB_HOST=xxxx
+DB_PORT=xxxx
+DB_NAME=xxxx
+DB_USER=xxxx
+DB_PASS=xxxx
+
+# EXPRESS
+PORT=xxxx
+
+# USER
+TOKEN_KEY=xxxx
+```
